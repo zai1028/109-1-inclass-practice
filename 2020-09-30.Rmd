@@ -1,0 +1,41 @@
+---
+title: "課?<a0>?練習模<e7><89><88>"
+author: "yunyun"
+date: "2020-09-30"
+output: output_format
+params:
+  id: "410973113"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Your code
+
+```{r}
+install.packages("googlesheets4")
+```
+library(knitr)
+purl("2020-09-30.Rmd")
+```{r}
+my_108_total_credits <- 15
+my.108.total_credits <- 15
+.my.108.total_credits <- 15
+我的108學年總學分數 <- 15
+`我的108學年總學分數` <- 15 # 特殊名稱處理，`不是名稱的一部份
+`.108.total_credits` <- 15
+```
+
+```{r}
+a <- 15 # 變數設定
+b <- a # 呼叫a的值，用來設定變數b的值，相當於 b <- 15
+```
+
+```{r}
+
+```
+
+```{r}
+sum(a+b)
+```
