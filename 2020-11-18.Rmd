@@ -1,0 +1,100 @@
+---
+title: "課?<a0>?練習模<e7><89><88>"
+author: "yunyun"
+date: "2020-11-18"
+output: output_format
+params:
+  id: "410973113"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Your code
+
+```{r}
+vectorExample <- c("小明","小英","大雄")
+
+# 有多少位置可選：
+length(vectorExample)
+```
+```{r}
+vectorExample[[1]]
+vectorExample[[3]]
+```
+```{r}
+listExample <- 
+  list(
+    student="小明",
+    `學期`=list(
+      `108-1`=list(
+        list(
+          name="個體經濟學",
+          teacher="Alice",
+          grade=85
+        )
+      ),
+      `108-2`=list(
+        list(
+          name="總體經濟學",
+          teacher="Mark",
+          grade=78
+        )
+      )
+    )
+  )
+# 有多少位置可選：
+length(listExample)
+```
+```{r}
+listExample[[1]]
+listExample[[2]]
+```
+```{r}
+example <- list(
+  name=c("小明","小花","小新","美美"),
+  height=c(175,166,170,160),
+  weight=c(77,NA,60,43),
+  birthday=lubridate::ymd(c("1998-03-11","1999-12-22","1995-08-22","2001-10-10")),
+  hobby=c("美食 旅遊","旅遊 時尚","3C 美食","音樂 旅遊"),
+  residence=c("Taipei","New Taipei","Taichung","Kaohsiung"),
+  allowance=factor(c("0-1000","1001-2000","2000+","1001-2000")),
+  bloodType=c("A","B","B","O")
+)
+```
+
+```{r}
+tr_example <- purrr::transpose(example)
+str(tr_example)
+```
+`
+```{r}
+df_example <- as.data.frame(example)
+example2 <- 
+  list(
+    name=c("John", "Mary"),
+    height=list(178, 168), # not atomic vector
+    weight=c(88, 56, 70) # not the same length as other elements
+  )
+as.data.frame(example2)
+```
+```{r}
+# 使用list的工具
+df_example$name[c(1,4)]
+
+# 使用data frame的延伸工具`[.row, .column]`
+df_example[c(1,4), "name"]
+```
+```{r}
+df_example[c(1,4), c("name","residence")]
+
+# 只使用list工具
+list(
+  name=df_example$name[c(1,4)],
+  residence=df_example$residence[c(1,4)]
+)
+# 要小心以下用法是error
+df_example[c("name","residence")][c(1,4)]
+```
+
