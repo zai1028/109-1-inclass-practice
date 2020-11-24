@@ -1,0 +1,90 @@
+---
+title: "課?<a0>?練習模<e7><89><88>"
+author: "yunyun"
+date: "2020-11-24"
+output: output_format
+params:
+  id: "410973113"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Your code
+
+```{r}
+restaurant = "すき家 Sukiya (新北三峽店)"
+date = lubridate::mdy("Nov 10, 2020")
+order = list(
+  list(
+    item="蕃茄牛丼",
+    quantity=1
+  ) # 這裡少了一筆 "起司蕃茄牛丼"
+)
+total = 328
+```
+
+```{r}
+oneOrder <- list(
+  "restaurant"=restaurant,
+  "date"=date,
+  "order"=order,
+  "total"=total
+)
+```
+
+```{r}
+oneOrder$order[[2]]
+```
+```{r}
+oneOrder$order[[2]] <- list(
+    item="起司蕃茄牛丼",
+    quantity=1
+  )
+```
+
+```{r}
+a <- c(2, 5, 7)
+a[c(4,5)]
+```
+```{r}
+a[c(4,5)] <- c(8,12)
+print(a)
+```
+```{r}
+currentNumberOfOrder <- length(oneOrder$order)
+# new order sequence number
+newOrderSeq <- 1:2 + currentNumberOfOrder
+oneOrder$order[newOrderSeq]
+```
+```{r}
+class(oneOrder$order)
+```
+
+```{r}
+oneOrder$order[
+  newOrderSeq
+] <- list(
+  item1_value,
+  item2_value
+)
+```
+```{r}
+oneOrder$order[
+  newOrderSeq
+] <- 
+  list(
+    list(
+      item="牛丼飯",
+      quantity=1
+    ),
+    list(
+      item="豬排飯",
+      quantity=1
+    )
+  )
+
+View(oneOrder)
+```
+
