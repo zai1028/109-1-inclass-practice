@@ -1,0 +1,162 @@
+---
+title: "課?<a0>?練習模<e7><89><88>"
+author: "yunyun"
+date: "2020-11-23"
+output: output_format
+params:
+  id: "410973113"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Your code
+
+```{r}
+vectorExample <- c("小明","小英","大雄")
+
+# 有多少位置可選：
+length(vectorExample)
+
+#-----------------------------------------------
+
+listExample <- 
+  list(
+    student="小明",
+    `學期`=list(
+      `108-1`=list(
+        list(
+          name="個體經濟學",
+          teacher="Alice",
+          grade=85
+        )
+      ),
+      `108-2`=list(
+        list(
+          name="總體經濟學",
+          teacher="Mark",
+          grade=78
+        )
+      )
+    )
+  )
+
+ `學期`=list(
+      `108-1`=list(
+        list(
+          name="個體經濟學",
+          teacher="Alice",
+          grade=85
+        )
+      ),
+      `108-2`=list(
+        list(
+          name="總體經濟學",
+          teacher="Mark",
+          grade=78
+        )
+      )
+ )
+# 有多少位置可選：
+length(listExample)
+length(`學期`)
+```
+```{r}
+vectorExample
+vectorExample[c(T,T,F)] # 要，要，不要
+```
+```{r}
+str(listExample[c(F,T)]) # 不要，要
+str(listExample[c(T,T)]) # 要，要
+```
+```{r}
+get1 <- listExample[["學期"]]
+get2 <- listExample["學期"]
+
+get1 # 學期拿出來，有3個元素的list
+str(get1)
+
+```
+```{r}
+get2 # listExample 只留下 學期元素，是個只有一個元素的list
+str(get2)
+```
+```{r}
+numVector <- c(2,3,6,-1,4,2,6)
+select1 <- numVector[c(1,4)]; select1
+select2 <- select1[[1]]; select2
+
+# 相當於
+numVector[c(1,4)][[1]]
+```
+```{r}
+select1 <- numVector[c(T,T,F,T,F,F,T)]; select1
+select2 <- select1[c(1,4)]; select2 #c裡面的4是True的第四個，所以會是6
+
+# 相當於
+numVector[c(T,T,F,T,F,F,T)][c(1,4)]
+```
+```{r}
+today <- list(
+  list("台北市",c(highest_temp = 25),c(lowest_temp = 18)),
+  list("新北市",'highest_temp '= 24,c(lowest_temp = 15)))
+tomorrow <- list(
+  list("台北市",c(highest_temp = 25),c(lowest_temp = 18)),
+  list("新北市",c(highest_temp = 24),c(lowest_temp = 15)))
+
+weather <- list(today,tomorrow)
+
+print(weather)
+```
+```{r}
+weather[[1]][[2]][[2]] # 今天/新北市/highest_temp
+weather[[2]][[2]][[2]] # 明天/新北市/highest_temp
+```
+```{r}
+weather[[1]][[2]]$highest_temp # 今天/新北市/highest_temp
+weather[[2]][[2]]$highest_temp # 明天/新北市/highest_temp
+```
+```{r}
+AA = c(Mary=176, John=188, Jenny= 165, Kate=170)
+LL = list(
+  Mary=list(176,"Taipei"),
+  John=list(188,"New Taipei"),
+  Jenny=list(165,"Taichung"),
+  Kate=list(170,"Hualien")
+)
+```
+
+```{r}
+AA[[1]]
+AA[1]
+```
+
+```{r}
+LL[[1]]
+LL[1]
+```
+```{r}
+LL$Mary
+```
+```{r}
+AA[c(1,4)]
+LL[c(1,4)]
+AA[c("Mary","Kate")]
+LL[c("Mary","Kate")]
+
+```
+```{r}
+a <- c(2, 5, 7)
+a[[4]]
+```
+```{r}
+a[[4]] <- 8
+print(a)
+```
+```{r}
+set.seed(2020)
+ages_chr <- sample(c("4以下","5-10","11-15"), 15, replace=T)
+ages_chr
+```
+
