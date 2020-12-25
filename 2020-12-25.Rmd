@@ -1,0 +1,50 @@
+---
+title: "課?<a0>?練習模<e7><89><88>"
+author: "yunyun"
+date: "2020-12-25"
+output: output_format
+params:
+  id: "410973113"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Your code
+
+```{r}
+# Given some information
+R <- 0.09
+M <- 10000
+T <- 3
+# What I need to do
+PDV <- 
+{
+  M/(1+R)**T #"**"->次方，也就是10000/（1個+0.09）的三次方
+}
+```
+
+```{r}
+PDV
+```
+```{r}
+getPDV <- function(R,M,T) 
+{
+  M/(1+R)**T
+}
+getPDV  #getPDV 變成函數
+```
+```{r}
+getPDV(R=0.09, T=3, M=10000) #在getPDV這個函數放入數字
+```
+```{r}
+debug(getPDV) 
+getPDV(R=0.09, T=3, M=10000) 
+undebug(getPDV)
+```
+```{r}
+# 查詢函數formals arguments要求
+formals(getPDV)
+```
+
