@@ -1,0 +1,44 @@
+---
+title: "課?<a0>?練習模<e7><89><88>"
+author: "yunyun"
+date: "2020-12-29"
+output: output_format
+params:
+  id: "410973113"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Your code
+
+```{r}
+members <- jsonlite::fromJSON("https://www.dropbox.com/s/olji1q29t2autec/ntpumeetMembers.json?dl=1", simplifyDataFrame = F)
+memberIds <- purrr::map_chr(members, ~{.x[["memberID"]]})
+
+```
+
+```{r}
+appLogin <- function(memberID, currentGPS){
+
+}
+
+# appLogin
+```
+
+```{r}
+f(X)<- function(X{})  #函數:3X 要寫3*X
+```
+
+```{r}
+memberID <- memberIds[[582]]
+currentGPS <-
+  c(
+    sample(
+      seq(24.94062,24.94788, by=0.00001),1),
+    sample(
+      seq(121.36293,121.37222, by=0.00001),1)
+    )
+```
+
